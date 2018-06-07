@@ -50,7 +50,7 @@
 }
 
 @test "Non existing flag" {
-  run bash ex05.sh -k 9
+  run bash ex05.sh -k -r  9
 
   [ "$status" -eq 1 ]
   [ "$output" = "Error.." ]

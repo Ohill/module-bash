@@ -11,14 +11,14 @@
 }
 
 @test "No args" {
-  run bash resources/ex04.sh
+  run bash ex04.sh
 
   [ "$status" -eq 1 ]
   [ "$output" = '' ]
 }
 
 @test "Without first arg" {
-  run bash grep_all.sh  resources/text_2.txt
+  run bash ex04.sh resources/text_2.txt
 
   [ "$status" -eq 1 ]
   [ "$output" = '' ]
