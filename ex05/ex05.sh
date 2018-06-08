@@ -1,12 +1,18 @@
 func="$1"
 testArg='^-?[0-9]+([.][0-9]+)?$'
 shift
-for i in $@
-   do
-     if ! [[ $i =~  $testArg ]]; then
+
+#for i in $@
+#   do
+if  [[ $(echo "$@" | sed '/[a-zA-Z]/g') = "" ]] && [-z $1 ]
+   then
         echo "Error.."; exit 1
      fi
-  done
+#  done
+
+
+
+
 case $func in
   "-s")
     res=0
@@ -49,6 +55,6 @@ res=0
   echo $(($res/$#))
     ;;
 
-    *) echo 'Error..'
+    *) echo 'Error..'; exit 1
    ;;
   esac
